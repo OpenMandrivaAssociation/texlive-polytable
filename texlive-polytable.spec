@@ -1,12 +1,12 @@
-# revision 20331
+# revision 31235
 # category Package
 # catalog-ctan /macros/latex/contrib/polytable
-# catalog-date 2010-11-05 12:43:21 +0100
+# catalog-date 2012-05-31 00:57:47 +0200
 # catalog-license lppl
 # catalog-version 0.8.2
 Name:		texlive-polytable
 Version:	0.8.2
-Release:	2
+Release:	3
 Summary:	Tabular-like environments with named columns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/polytable
@@ -51,17 +51,3 @@ layouts, for example for program code, are possible.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8.2-2
-+ Revision: 755022
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.8.2-1
-+ Revision: 719287
-- texlive-polytable
-- texlive-polytable
-- texlive-polytable
-- texlive-polytable
-
