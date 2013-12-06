@@ -6,7 +6,7 @@
 # catalog-version 0.8.2
 Name:		texlive-polytable
 Version:	0.8.2
-Release:	3
+Release:	4
 Summary:	Tabular-like environments with named columns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/polytable
