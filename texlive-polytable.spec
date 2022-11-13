@@ -1,19 +1,13 @@
-# revision 31235
-# category Package
-# catalog-ctan /macros/latex/contrib/polytable
-# catalog-date 2012-05-31 00:57:47 +0200
-# catalog-license lppl
-# catalog-version 0.8.2
 Name:		texlive-polytable
-Version:	0.8.2
-Release:	13
+Version:	55837
+Release:	1
 Summary:	Tabular-like environments with named columns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/polytable
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ placed between arbitrary columns. Complex alignment-based
 layouts, for example for program code, are possible.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -44,7 +38,8 @@ layouts, for example for program code, are possible.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
