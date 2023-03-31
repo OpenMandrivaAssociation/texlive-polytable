@@ -1,6 +1,6 @@
 Name:		texlive-polytable
 Version:	55837
-Release:	1
+Release:	2
 Summary:	Tabular-like environments with named columns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/polytable
