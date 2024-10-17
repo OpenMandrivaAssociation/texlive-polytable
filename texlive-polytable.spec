@@ -3,7 +3,7 @@ Version:	55837
 Release:	2
 Summary:	Tabular-like environments with named columns
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/polytable
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/polytable
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.doc.r%{version}.tar.xz
