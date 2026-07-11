@@ -1,48 +1,24 @@
-Name:		texlive-polytable
-Version:	55837
-Release:	2
+%global tl_name polytable
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.8.6
+Release:	%{tl_revision}.1
 Summary:	Tabular-like environments with named columns
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/polytable
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/polytable.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package implements a variant of tabular-like environments
-where columns can be given a name and entries can flexibly be
-placed between arbitrary columns. Complex alignment-based
-layouts, for example for program code, are possible.
+This package implements a variant of tabular-like environments where
+columns can be given a name and entries can flexibly be placed between
+arbitrary columns. Complex alignment-based layouts, for example for
+program code, are possible. The package depends on lazylist.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/polytable/polytable.sty
-%doc %{_texmfdistdir}/doc/latex/polytable/README
-%doc %{_texmfdistdir}/doc/latex/polytable/polytable.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/polytable/polytable.dtx
-%doc %{_texmfdistdir}/source/latex/polytable/polytable.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
